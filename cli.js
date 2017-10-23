@@ -24,7 +24,7 @@ const runDev = ({ port = 8080 }) => {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: 'raw-loader!./index.html',
+        template: '../raw-loader!./index.html',
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
