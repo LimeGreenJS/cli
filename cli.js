@@ -8,7 +8,7 @@ const koaWebpack = require('koa-webpack');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const nodeModulesDir = path.resolve(__dirname, '../node_modules');
+const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 
 const runDev = ({ port = 8080 }) => {
   const app = new Koa();
@@ -24,7 +24,7 @@ const runDev = ({ port = 8080 }) => {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: `${path.resolve(__dirname, '../raw-loader')}!./index.html`,
+        template: `${path.resolve(__dirname, 'raw-loader')}!./index.html`,
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
