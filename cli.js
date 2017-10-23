@@ -15,7 +15,7 @@ const runDev = ({ port = 8080 }) => {
   const config = {
     entry: [
       './index.js',
-      `${nodeModulesDir}/webpack-hot-middleware/client`),
+      `${nodeModulesDir}/webpack-hot-middleware/client`,
     ],
     output: {
       filename: '[hash]-index.js',
