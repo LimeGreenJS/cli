@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const version = require('./package.json').version;
+const path = require('path');
 const program = require('commander');
 const Koa = require('koa');
 const koaWebpack = require('koa-webpack');
@@ -12,7 +13,7 @@ const runDev = ({ port = 8080 }) => {
   const config = {
     entry: [
       './index.js',
-      'webpack-hot-middleware/client',
+      path.resolve(__dirname, '../node_modules', 'webpack-hot-middleware/client'),
     ],
     output: {
       filename: '[hash]-index.js',
