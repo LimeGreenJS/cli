@@ -1,7 +1,7 @@
 {
   "name": "limegreenjs",
   "description": "CLI for LimeGreenJS examples",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": "LimeGreenJS/cli",
   "bin": "./cli.js",
   "dependencies": {
@@ -16,7 +16,8 @@
     "koa-webpack": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-hot-middleware": "^2.20.0"
   },
   "engines": {
     "node": ">=8.2.1"
