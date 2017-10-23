@@ -8,12 +8,14 @@ const koaWebpack = require('koa-webpack');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const nodeModulesDir = path.resolve(__dirname, '../node_modules');
+
 const runDev = ({ port = 8080 }) => {
   const app = new Koa();
   const config = {
     entry: [
       './index.js',
-      path.resolve(__dirname, '../node_modules', 'webpack-hot-middleware/client'),
+      `${nodeModulesDir}/webpack-hot-middleware/client`),
     ],
     output: {
       filename: '[hash]-index.js',
@@ -22,7 +24,7 @@ const runDev = ({ port = 8080 }) => {
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: './index.html',
+        template: `${nodeModulesDir}/raw-loader!./index.html`,
       }),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
@@ -33,21 +35,21 @@ const runDev = ({ port = 8080 }) => {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [{
-          loader: 'babel-loader',
+          loader: `${nodeModulesDir}/babel-loader`,
           options: {
             presets: [
-              ['env', { modules: false }],
-              'react',
+              [`${nodeModulesDir}/babel-preset-env`, { modules: false }],
+              `${nodeModulesDir}/babel-preset-react`,
             ],
             plugins: [
-              'transform-object-rest-spread',
+              `${nodeModulesDir}/babel-plugin-transform-object-rest-spread`,
             ],
           },
         }],
       }, {
         test: /\.(png|gif|jpg|svg)$/,
         use: [{
-          loader: 'file-loader',
+          loader: `${nodeModulesDir}/file-loader`,
           options: { name: '[hash]-[name].[ext]' },
         }],
       }],
