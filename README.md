@@ -1,1 +1,1 @@
-# cli
+# LimeGreenJS CLI
