@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const version = require('./package.json').version;
+const fs = require('fs');
 const path = require('path');
 const program = require('commander');
 const Koa = require('koa');
@@ -8,7 +9,10 @@ const koaWebpack = require('koa-webpack');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const nodeModulesDir = path.resolve(__dirname, 'node_modules');
+let nodeModulesDir = path.resolve(__dirname, 'node_modules');
+if (!fs.existsSync(nodeModulesDir)) {
+  nodeModulesDir = './node_modules'; // fallback to default
+}
 
 const runDev = ({ port = 8080 }) => {
   const app = new Koa();
