@@ -1,7 +1,7 @@
 {
   "name": "limegreenjs",
   "description": "CLI for LimeGreenJS examples",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "repository": "LimeGreenJS/cli",
   "bin": "./cli.js",
   "dependencies": {

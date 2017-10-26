@@ -1,7 +1,7 @@
 # LimeGreenJS CLI
 
 ```
-git clone https://github.com/LimeGreenJS/example-hello-world.git
-cd example-hello-world
+git clone https://github.com/LimeGreenJS/hello-world.git
+cd hello-world
 npx limegreenjs dev
 ```
