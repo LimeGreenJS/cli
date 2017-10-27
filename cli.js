@@ -47,6 +47,7 @@ const runDev = ({ port = 8080 }) => {
             ],
             plugins: [
               `${nodeModulesDir}/babel-plugin-transform-object-rest-spread`,
+              `${nodeModulesDir}/babel-plugin-syntax-dynamic-import`,
             ],
           },
         }],
