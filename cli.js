@@ -23,6 +23,7 @@ const runDev = ({ port = 8080 }) => {
     ],
     output: {
       filename: '[hash]-index.js',
+      chunkFilename: '[chunkhash]-[name].js',
       publicPath: '/',
     },
     plugins: [
