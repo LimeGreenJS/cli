@@ -1,11 +1,13 @@
 {
   "name": "limegreenjs",
   "description": "CLI for LimeGreenJS examples",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "repository": "LimeGreenJS/cli",
   "bin": "./cli.js",
   "dependencies": {
-    "apollo-client-preset": "^1.0.1",
+    "apollo-cache-inmemory": "^1.0.0",
+    "apollo-client": "^2.0.1",
+    "apollo-link-http": "^1.0.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
