@@ -19,7 +19,6 @@ const runDev = ({ port = 8080 }) => {
   const config = {
     entry: [
       './index.js',
-      `${nodeModulesDir}/webpack-hot-middleware/client`,
     ],
     output: {
       filename: '[hash]-index.js',
@@ -31,7 +30,6 @@ const runDev = ({ port = 8080 }) => {
         filename: 'index.html',
         template: `${nodeModulesDir}/raw-loader!./index.html`,
       }),
-      new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
     ],
