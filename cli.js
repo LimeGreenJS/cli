@@ -25,6 +25,7 @@ const runDev = ({ port = 8080 }) => {
       chunkFilename: '[chunkhash]-chunk.js',
       publicPath: '/',
     },
+    devtool: 'source-map'
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
