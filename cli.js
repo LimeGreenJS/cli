@@ -49,7 +49,7 @@ const runDev = ({ port = 8080 }) => {
               `${nodeModulesDir}/@babel/preset-react`,
             ],
             plugins: [
-              `${nodeModulesDir}/@babel/plugin-transform-object-rest-spread`,
+              `${nodeModulesDir}/@babel/plugin-proposal-object-rest-spread`,
               `${nodeModulesDir}/@babel/plugin-syntax-dynamic-import`,
             ],
           },
