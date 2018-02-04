@@ -42,13 +42,11 @@ const runDev = ({ port = 8080 }) => {
           loader: `${nodeModulesDir}/babel-loader`,
           options: {
             presets: [
-              [`${nodeModulesDir}/@babel/preset-env`, {
-                modules: false,
-                exclude: ['transform-regenerator'],
-              }],
+              [`${nodeModulesDir}/@babel/preset-env`, { modules: false }],
               `${nodeModulesDir}/@babel/preset-react`,
             ],
             plugins: [
+              `${nodeModulesDir}/@babel/plugin-transform-runtime`,
               `${nodeModulesDir}/@babel/plugin-proposal-object-rest-spread`,
               `${nodeModulesDir}/@babel/plugin-syntax-dynamic-import`,
             ],
