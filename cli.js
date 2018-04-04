@@ -17,6 +17,7 @@ if (!fs.existsSync(nodeModulesDir)) {
 const runDev = ({ port = 8080 }) => {
   const app = new Koa();
   const config = {
+    mode: 'development',
     entry: [
       './index.js',
     ],
@@ -31,8 +32,6 @@ const runDev = ({ port = 8080 }) => {
         filename: 'index.html',
         template: `${nodeModulesDir}/raw-loader!./index.html`,
       }),
-      new webpack.NamedModulesPlugin(),
-      new webpack.NoEmitOnErrorsPlugin(),
     ],
     module: {
       rules: [{
