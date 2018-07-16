@@ -14,7 +14,7 @@ if (!fs.existsSync(nodeModulesDir)) {
   nodeModulesDir = './node_modules'; // fallback to default
 }
 
-const runDev = ({ port = 8080 }) => {
+const runDev = async ({ port = 8080 }) => {
   const app = new Koa();
   const config = {
     mode: 'development',
@@ -64,7 +64,7 @@ const runDev = ({ port = 8080 }) => {
       extensions: ['.js', '.jsx'],
     },
   };
-  app.use(koaWebpack({ config }));
+  app.use(await koaWebpack({ config }));
   app.listen(port);
   console.log('Listening on', port);
 };
